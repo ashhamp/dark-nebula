@@ -4,21 +4,31 @@ exports.recursionAnswers = {
   listFiles: function(data, dirName) {
     // Optional Challenge
 
-    var list = [];
-    (function look(data) {
-      var files = data.files;
-
-      if (typeof files !== "undefined") {
-        for (var i = 0; i < files.length; i++) {
-          if (typeof files[i] === "string") {
-            list.push(files[i]);
-          } else {
-            look(files[i]);
-          }
-        }
-      }
-    })(data);
-    return list;
+    // var list = [];
+    // (function look(data) {
+    //   var dir = data.dir
+    //   var files = data.files;
+    //
+    //   if (typeof files !== "undefined" && dirName === null) {
+    //       for (var i = 0; i < files.length; i++) {
+    //         if (typeof files[i] === "string") {
+    //           list.push(files[i]);
+    //         } else {
+    //           look(files[i]);
+    //         }
+    //   } else if (typeof files !== "undefined" && dirName !== null) {
+    //       for (var i = 0; i < files.length; i++) {
+    //         if (dir === dirName && typeof files[i] === "string") {
+    //           list.push(files[i]);
+    //         } else {
+    //           look(files[i]);
+    //         }
+    //       }
+    //
+    //     }
+    //   }
+    // })(data);
+    // return list;
   },
 
   permute: function(arr) {
@@ -38,7 +48,17 @@ exports.recursionAnswers = {
         list.push(nextNum);
       }
     }
-    return list[n - 1];
+    // return list[n - 1];
+    //
+    // var list = [1, 1];
+    //
+    // if (list.length >= n) {
+    //   return list[n - 1];
+    // } else {
+    //   var nextNum = list[n - 1] + list[n - 2];
+    //   list.push(nextNum)
+    //   fibonacci();
+    // }
   },
 
   validParentheses: function(n) {

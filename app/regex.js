@@ -7,7 +7,7 @@ exports.regexAnswers = {
   },
 
   containsRepeatingLetter : function(str) {
-    var patt = /([A-z]).*?\1/
+    var patt = /([a-z])\1/i
     return patt.test(str);
   },
 

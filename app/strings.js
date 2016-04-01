@@ -12,8 +12,20 @@ exports.stringsAnswers = {
     }
     return newString;
   },
+
   wordWrap: function(str, cols) {
-  
+    var arr = str.split(" ")
+    var counter = 0
+    for (i = 0; i < arr.length - 1; i++) {
+      if((arr[i].length + arr[i + 1].length) + counter < cols) {
+        counter += arr[i].length
+        arr[i] += " ";
+      } else {
+        arr[i] += "\n";
+        counter = 0;
+      }
+    }
+    return arr.join("");
   },
 
   reverseString: function(str) {
